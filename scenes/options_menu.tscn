@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnbcptjaooi6q"]
+
+[ext_resource type="Script" uid="uid://77fv163oar4y" path="res://scripts/options_menu.gd" id="1_ijpji"]
+[ext_resource type="FontFile" uid="uid://cbl5g3px27xp1" path="res://assets/fonts/PixelOperator8.ttf" id="2_hm4m4"]
+
+[node name="Options_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijpji")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -42.0
+offset_right = 182.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="music_toggle" type="CheckButton" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hm4m4")
+theme_override_font_sizes/font_size = 32
+text = "Toggle Music"
+
+[node name="back_button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_hm4m4")
+theme_override_font_sizes/font_size = 32
+text = "Back to Menu"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]
